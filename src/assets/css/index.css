@@ -366,6 +366,15 @@ body.theme-modern .card a:hover {
   text-decoration: underline;
 }
 
+body.theme-modern .events-board-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0c5b96;
+  text-align: center;
+  margin: 25px 0 15px;
+}
+
 /* Modern Event Table styling */
 body.theme-modern table.scr-events {
   width: 100%;
@@ -819,6 +828,15 @@ body.theme-legacy .card p {
 
 body.theme-legacy .card table {
   margin-bottom: 1rem;
+}
+
+body.theme-legacy .events-board-title {
+  font-family: Arial, sans-serif;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #212529;
+  text-align: center;
+  margin: 20px 0 10px;
 }
 
 /* Legacy Table replication */
