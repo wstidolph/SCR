@@ -634,19 +634,19 @@ body.theme-legacy header {
   padding: 0 15px;
 }
 
-body.theme-legacy .brand-container {
+body.theme-legacy header .brand-container {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
-body.theme-legacy .brand-logo {
+body.theme-legacy header .brand-logo {
   height: 172px;
   width: auto;
   margin-right: 15px;
 }
 
-body.theme-legacy .brand-title {
+body.theme-legacy header .brand-title {
   color: #fff;
   font-size: 3.5rem;
   font-family: Arial, sans-serif;
@@ -662,12 +662,44 @@ body.theme-legacy .brand-title {
     justify-content: center;
     padding: 20px 10px;
   }
-  body.theme-legacy .brand-logo {
+  body.theme-legacy header .brand-logo {
     height: 100px;
   }
-  body.theme-legacy .brand-title {
+  body.theme-legacy header .brand-title {
     font-size: 2.2rem;
   }
+}
+
+/* Legacy Sidebar Brand styles - Centered, vertical, and fluidly scaled to avoid cutoff */
+body.theme-legacy .sidebar .brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+body.theme-legacy .sidebar .brand-logo {
+  height: 80px;
+  width: auto;
+  margin: 0;
+}
+
+body.theme-legacy .sidebar .brand-title {
+  color: #0056b3;
+  font-size: clamp(0.9rem, 1.2vw, 1.25rem);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+  -webkit-text-stroke: 0.5px #002;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  word-break: break-word;
+  width: 100%;
+  padding: 0 5px;
 }
 
 /* Legacy Content Row */
