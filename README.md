@@ -3,7 +3,7 @@ This is a re-hosting project for the Santa Cruz Randonneurs site, just to make i
 
 # Status
 Currently the generated site is hosted at [https://scr-5d6.pages.dev/](https://scr-5d6.pages.dev/) (a free Cloudglage Pages setup under Wayne Stidolph's account)
-* see the Walkthrough file for general architecture and instructions
+* see the [Architecture & Maintenance Guide](maintenance_guide.md) file for general architecture and instructions
 * file a github [Issue](https://github.com/wstidolph/SCR/issues) to comment or complain
 
 # Updating
