@@ -1,0 +1,55 @@
+# Santa Cruz Randonneurs Legacy Redirect Rules
+# Re-maps legacy Drupal paths to Eleventy clean routes on Cloudflare Pages
+
+/node/1 / 301
+/home / 301
+/node/20 /pages/registration/ 301
+/node/42 /pages/paypal/ 301
+/node/10 /pages/3cr/ 301
+
+# Clean path mapping to ensure absolute links resolve correctly
+/pages/general-info /pages/general-info/ 301
+/pages/ride-format /pages/ride-format/ 301
+/pages/rules /pages/rules/ 301
+/pages/routes /pages/routes/ 301
+/pages/registration /pages/registration/ 301
+/pages/results /pages/results/ 301
+/pages/about /pages/about/ 301
+/pages/3cr /pages/3cr/ 301
+/pages/paypal /pages/paypal/ 301
+/contact /contact/ 301
+
+# Historically discovered results paths
+/pages/2010Results /pages/2010Results/ 301
+/pages/2009Results /pages/2009Results/ 301
+/pages/2008Results /pages/2008Results/ 301
+/pages/2007Results /pages/2007Results/ 301
+/pages/2006Results /pages/2006Results/ 301
+/pages/2005Results /pages/2005Results/ 301
+/pages/2004Results /pages/2004Results/ 301
+
+# Historically discovered reports paths
+/pages/2009Report /pages/2009Report/ 301
+/pages/2008Report /pages/2008Report/ 301
+/pages/2007Report /pages/2007Report/ 301
+/pages/2006Report /pages/2006Report/ 301
+
+# 3CR Event historic paths
+/pages/3CR2026 /pages/3CR2026/ 301
+/pages/3CR2022 /pages/3CR2022/ 301
+/pages/3CR2018 /pages/3CR2018/ 301
+/pages/3CR2014 /pages/3CR2014/ 301
+/pages/2026-3CREntrants /pages/2026-3CREntrants/ 301
+/pages/2026-3CRRoutes /pages/2026-3CRRoutes/ 301
+/pages/3CREntrants /pages/3CREntrants/ 301
+/pages/3CRControls2022 /pages/3CRControls2022/ 301
+/pages/3CR2018Route /pages/3CR2018Route/ 301
+/pages/3CR2018Roster /pages/3CR2018Roster/ 301
+/pages/3CR2018Plan /pages/3CR2018Plan/ 301
+/pages/3CR2018Services /pages/3CR2018Services/ 301
+/pages/3CR2014Route /pages/3CR2014Route/ 301
+/pages/3CR2014Roster /pages/3CR2014Roster/ 301
+/pages/3CR2014Plan /pages/3CR2014Plan/ 301
+/pages/3CR2014Services /pages/3CR2014Services/ 301
+/pages/3CR2014Rules /pages/3CR2014Rules/ 301
+/pages/whatis /pages/whatis/ 301

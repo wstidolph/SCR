@@ -1,0 +1,17 @@
+{
+  "name": "scr-migrate",
+  "version": "1.0.0",
+  "description": "Migration of Santa Cruz Randonneurs to Eleventy",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "jsdom": "^26.0.0"
+  }
+}

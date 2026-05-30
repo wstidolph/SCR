@@ -1,0 +1,997 @@
+/* 
+   ==========================================================================
+   Santa Cruz Randonneurs Double-Theme Design System
+   Contains:
+   - Base Fonts & Reset
+   - Theme Modern (Premium Coastal Design with Outfit & Inter)
+   - Theme Legacy (Drupal 11 / Bootstrap 4 Replication)
+   - Floating Toggle Switch Controls
+   ==========================================================================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* --- Reset & Base Layout --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-column: column;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.3s ease;
+}
+
+/* ==========================================================================
+   THEME MODERN (Premium redesigned look and feel)
+   ========================================================================== */
+body.theme-modern {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f3f7fa;
+  color: #1a2530;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modern Layout Structure */
+body.theme-modern .main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+body.theme-modern .content-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  body.theme-modern .main-container {
+    padding-top: 70px; /* Space for top-bar */
+  }
+  body.theme-modern .content-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modern Header / Top Bar for Mobile */
+body.theme-modern .mobile-header {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  body.theme-modern .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0 20px;
+    z-index: 1000;
+  }
+  
+  body.theme-modern .mobile-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  
+  body.theme-modern .mobile-logo {
+    height: 40px;
+    width: auto;
+  }
+  
+  body.theme-modern .mobile-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    color: #0c5b96;
+    font-size: 1.1rem;
+  }
+  
+  body.theme-modern .menu-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    padding: 5px;
+  }
+  
+  body.theme-modern .menu-toggle-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #0c5b96;
+    border-radius: 2px;
+    transition: 0.3s ease;
+  }
+  
+  body.theme-modern.menu-open .menu-toggle-btn span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  body.theme-modern.menu-open .menu-toggle-btn span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  body.theme-modern.menu-open .menu-toggle-btn span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+/* Modern Sidebar Navigation */
+body.theme-modern .sidebar {
+  background: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+
+@media (max-width: 991px) {
+  body.theme-modern .sidebar {
+    position: fixed;
+    top: 70px;
+    left: -280px;
+    width: 280px;
+    height: calc(100vh - 70px);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.05);
+  }
+  
+  body.theme-modern.menu-open .sidebar {
+    left: 0;
+  }
+}
+
+body.theme-modern .brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+body.theme-modern .brand-logo {
+  height: 100px;
+  width: auto;
+  filter: drop-shadow(0 4px 10px rgba(12, 91, 150, 0.15));
+  transition: transform 0.3s ease;
+}
+
+body.theme-modern .brand-logo:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+body.theme-modern .brand-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #0c5b96;
+  line-height: 1.2;
+}
+
+body.theme-modern .nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+body.theme-modern .nav-item a {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  color: #4a5d6e;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+body.theme-modern .nav-item a:hover {
+  background-color: #f0f7fc;
+  color: #0c5b96;
+  padding-left: 20px;
+}
+
+body.theme-modern .nav-item a.active {
+  background: linear-gradient(135deg, #0c5b96, #2d82b7);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(12, 91, 150, 0.2);
+}
+
+/* Modern Search Box */
+body.theme-modern .search-box {
+  position: relative;
+  margin-top: auto;
+}
+
+body.theme-modern .search-input {
+  width: 100%;
+  padding: 10px 16px;
+  padding-right: 40px;
+  border: 1px solid #d8e2eb;
+  border-radius: 8px;
+  background-color: #f7fafc;
+  color: #1a2530;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.theme-modern .search-input:focus {
+  border-color: #0c5b96;
+  box-shadow: 0 0 0 3px rgba(12, 91, 150, 0.1);
+  background-color: white;
+}
+
+body.theme-modern .search-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #7b8e9d;
+  cursor: pointer;
+}
+
+/* Modern Content Area */
+body.theme-modern .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.theme-modern main {
+  flex: 1;
+  padding: 50px 60px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  body.theme-modern main {
+    padding: 30px 20px;
+  }
+}
+
+body.theme-modern .hero-banner {
+  background: linear-gradient(135deg, rgba(12, 91, 150, 0.85), rgba(45, 130, 183, 0.85)), url(/themes/custom/rando/images/header.png);
+  background-size: cover;
+  background-position: center;
+  padding: 50px 40px;
+  border-radius: 16px;
+  color: white;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(12, 91, 150, 0.15);
+}
+
+body.theme-modern .hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body.theme-modern .hero-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+body.theme-modern .page-header-block {
+  margin-bottom: 30px;
+}
+
+body.theme-modern .page-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 2.4rem;
+  color: #0c5b96;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+body.theme-modern .page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #0c5b96, #2d82b7);
+  border-radius: 2px;
+}
+
+/* Modern Card Layouts */
+body.theme-modern .card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(12, 91, 150, 0.05);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+body.theme-modern .card p {
+  margin-bottom: 15px;
+}
+
+body.theme-modern .card strong {
+  color: #0c5b96;
+}
+
+body.theme-modern .card a {
+  color: #2d82b7;
+  text-decoration: none;
+  font-weight: 550;
+  transition: color 0.2s ease;
+}
+
+body.theme-modern .card a:hover {
+  color: #0c5b96;
+  text-decoration: underline;
+}
+
+/* Modern Event Table styling */
+body.theme-modern table.scr-events {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e1eaf0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  margin: 30px 0;
+}
+
+/* Force left-alignment for all cells and nested structures in the Modern table */
+body.theme-modern table.scr-events th,
+body.theme-modern table.scr-events td,
+body.theme-modern table.scr-events h3,
+body.theme-modern table.scr-events p,
+body.theme-modern table.scr-events strong,
+body.theme-modern table.scr-events span {
+  text-align: left !important;
+}
+
+/* Master header row th styling */
+body.theme-modern table.scr-events tr:first-child th {
+  background-color: #0c5b96 !important;
+  color: white !important;
+  padding: 16px !important;
+  border: none !important;
+  vertical-align: top !important;
+}
+
+/* Legacy h3 elements in header row overridden to clean small uppercase styling */
+body.theme-modern table.scr-events tr:first-child h3 {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  color: white !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+}
+
+/* Data rows th/td styling (re-styling legacy Drupal th data rows to behave like standard td elements) */
+body.theme-modern table.scr-events tr:not(:first-child) th,
+body.theme-modern table.scr-events tr:not(:first-child) td {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 400 !important; /* Overrides legacy th bolding */
+  background-color: white !important;
+  color: #3b4e61 !important;
+  padding: 16px !important;
+  font-size: 0.9rem !important;
+  border-bottom: 1px solid #e1eaf0 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  vertical-align: top !important;
+  transition: background-color 0.2s ease;
+}
+
+/* Ensure links inside data rows look clean and bold */
+body.theme-modern table.scr-events tr:not(:first-child) a {
+  color: #0c5b96;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+body.theme-modern table.scr-events tr:not(:first-child) a:hover {
+  color: #2d82b7;
+  text-decoration: underline;
+}
+
+body.theme-modern table.scr-events tr:not(:first-child) a strong {
+  font-weight: 600 !important;
+}
+
+/* Alternating Row Shading for Data Rows (Zebra striping) */
+body.theme-modern table.scr-events tr:not(:first-child):nth-child(even) th,
+body.theme-modern table.scr-events tr:not(:first-child):nth-child(even) td {
+  background-color: #f4f8fb !important; /* Soft elegant blue-grey shading */
+}
+
+/* Hover Highlight Shading for Data Rows */
+body.theme-modern table.scr-events tr:not(:first-child):hover th,
+body.theme-modern table.scr-events tr:not(:first-child):hover td {
+  background-color: #e2eff7 !important; /* Interactive sea glass blue highlight */
+}
+
+body.theme-modern table.scr-events a:hover {
+  color: #2d82b7;
+  border-bottom-color: #2d82b7;
+}
+
+/* Modern Buttons */
+body.theme-modern .btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #0c5b96, #2d82b7);
+  color: white !important;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(12, 91, 150, 0.15);
+  text-align: center;
+  text-decoration: none !important;
+}
+
+body.theme-modern .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(12, 91, 150, 0.25);
+  filter: brightness(1.1);
+}
+
+/* Modern Contact & PayPal Forms */
+body.theme-modern .contact-container,
+body.theme-modern .paypal-payment-container {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(12, 91, 150, 0.05);
+}
+
+body.theme-modern .form-group {
+  margin-bottom: 24px;
+}
+
+body.theme-modern .form-label {
+  display: block;
+  font-weight: 600;
+  color: #3b4e61;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+body.theme-modern .form-label.required::after {
+  content: ' *';
+  color: #e53e3e;
+}
+
+body.theme-modern .form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d8e2eb;
+  border-radius: 8px;
+  background-color: #f7fafc;
+  color: #1a2530;
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.theme-modern .form-control:focus {
+  border-color: #0c5b96;
+  box-shadow: 0 0 0 3px rgba(12, 91, 150, 0.1);
+  background-color: white;
+}
+
+body.theme-modern select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5d6e'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 18px;
+  padding-right: 40px;
+}
+
+body.theme-modern textarea.form-control {
+  resize: vertical;
+}
+
+body.theme-modern .paypal-payment-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+body.theme-modern .paypal-payment-container td {
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f4f8;
+  font-weight: 500;
+  color: #3b4e61;
+}
+
+body.theme-modern .paypal-payment-container tr:last-child td {
+  border-bottom: none;
+}
+
+body.theme-modern .paypal-payment-container input[type="image"] {
+  display: block;
+  margin: 30px auto 0;
+  transition: transform 0.2s ease;
+}
+
+body.theme-modern .paypal-payment-container input[type="image"]:hover {
+  transform: scale(1.05);
+}
+
+/* Modern Footer */
+body.theme-modern footer {
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #7b8e9d;
+}
+
+body.theme-modern footer a {
+  color: #4a5d6e;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+body.theme-modern footer a:hover {
+  color: #0c5b96;
+}
+
+@media (max-width: 768px) {
+  body.theme-modern footer {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 30px 20px;
+  }
+}
+
+
+/* ==========================================================================
+   THEME LEGACY (Replicates original Drupal 11 & Bootstrap 4 design exactly)
+   ========================================================================== */
+body.theme-legacy {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #3399ca;
+  color: #212529;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* Legacy Layout structure */
+body.theme-legacy .main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Legacy Header */
+body.theme-legacy header {
+  background-image: url(/themes/custom/rando/images/header.png);
+  background-position: top;
+  background-size: cover;
+  min-height: 14rem;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+body.theme-legacy .brand-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+body.theme-legacy .brand-logo {
+  height: 172px;
+  width: auto;
+  margin-right: 15px;
+}
+
+body.theme-legacy .brand-title {
+  color: #fff;
+  font-size: 3.5rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  -webkit-text-stroke: 1px #007;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  body.theme-legacy header {
+    min-height: 10rem;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 10px;
+  }
+  body.theme-legacy .brand-logo {
+    height: 100px;
+  }
+  body.theme-legacy .brand-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Legacy Content Row */
+body.theme-legacy .content-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Legacy Sidebar Navigation Left Column */
+body.theme-legacy .sidebar {
+  width: 16.666667%; /* col-lg-2 equivalent */
+  background-color: #f5f5f5;
+  padding: 15px;
+}
+
+@media (max-width: 991px) {
+  body.theme-legacy .sidebar {
+    width: 100%;
+  }
+}
+
+body.theme-legacy .nav-menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+body.theme-legacy .nav-item {
+  margin-bottom: 0.2rem;
+}
+
+body.theme-legacy .nav-item a {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: #3399ca;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  border-radius: 4px;
+}
+
+body.theme-legacy .nav-item a:hover {
+  color: #0056b3;
+  background-color: #e9ecef;
+}
+
+body.theme-legacy .nav-item a.active {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Legacy Search */
+body.theme-legacy .search-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 0;
+}
+
+body.theme-legacy .search-input {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 150px;
+}
+
+body.theme-legacy .search-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+/* Legacy Main Body Right Column */
+body.theme-legacy .content-wrapper {
+  width: 83.333333%; /* col-lg-10 equivalent */
+  background-color: #fff;
+  padding: 20px 30px;
+}
+
+@media (max-width: 991px) {
+  body.theme-legacy .content-wrapper {
+    width: 100%;
+    padding: 20px 15px;
+  }
+}
+
+body.theme-legacy .page-header-block {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+body.theme-legacy .page-title {
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+body.theme-legacy .card {
+  /* No visual modern container cards in the old design, just standard text flows */
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+body.theme-legacy .card p {
+  margin-bottom: 1rem;
+}
+
+body.theme-legacy .card table {
+  margin-bottom: 1rem;
+}
+
+/* Legacy Table replication */
+body.theme-legacy table.scr-events {
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  background-color: #e0e0e0;
+}
+
+body.theme-legacy table.scr-events th {
+  background-color: #f5f5f5;
+  border: 1px solid #000;
+  padding: 0.2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+body.theme-legacy table.scr-events td,
+body.theme-legacy table.scr-events th {
+  border: 1px solid #000;
+  padding: 0.2rem;
+  background-color: #f5f5f5;
+  vertical-align: top;
+}
+
+body.theme-legacy table.scr-events a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+body.theme-legacy table.scr-events a:hover {
+  text-decoration: underline;
+}
+
+/* Legacy Contact Form and PayPal */
+body.theme-legacy .contact-container,
+body.theme-legacy .paypal-payment-container {
+  max-width: 700px;
+}
+
+body.theme-legacy .form-group {
+  margin-bottom: 1rem;
+}
+
+body.theme-legacy .form-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+body.theme-legacy .form-label.required::after {
+  content: ' *';
+  color: red;
+}
+
+body.theme-legacy .form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+body.theme-legacy .btn-submit,
+body.theme-legacy .search-btn {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+}
+
+body.theme-legacy .btn-submit:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+body.theme-legacy .paypal-payment-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+body.theme-legacy .paypal-payment-container td {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+body.theme-legacy .paypal-payment-container select {
+  padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: #fff;
+}
+
+body.theme-legacy .paypal-payment-container input[type="text"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+/* Legacy Footer */
+body.theme-legacy footer {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-top: 1px solid #dee2e6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto;
+  width: 100%;
+}
+
+body.theme-legacy footer a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+body.theme-legacy footer a:hover {
+  text-decoration: underline;
+}
+
+body.theme-legacy .copyright {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Hidden container on legacy */
+body.theme-legacy .mobile-header,
+body.theme-legacy .hero-banner {
+  display: none !important;
+}
+
+
+/* ==========================================================================
+   FLOATING THEME TOGGLE SWITCH
+   ========================================================================== */
+.theme-switch-wrapper {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 16px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18), 0 0 0 1px rgba(12, 91, 150, 0.1);
+}
+
+.theme-switch-label {
+  color: #3b4e61;
+}
+
+.theme-switch-btn {
+  background: linear-gradient(135deg, #0c5b96, #2d82b7);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: inherit;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(12, 91, 150, 0.2);
+}
+
+.theme-switch-btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 12px rgba(12, 91, 150, 0.3);
+}
+
+/* Make sure botcheck hidden is hidden */
+.hidden {
+  display: none !important;
+}

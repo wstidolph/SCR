@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Santa Cruz Randonneurs - Northern California randonneuring bicycle events.">
+  <meta name="generator" content="Eleventy">
+  <title>{{ title }} | Santa Cruz Randonneurs</title>
+  
+  <!-- Favicon (Original path kept) -->
+  <link rel="icon" href="/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon">
+  
+  <!-- Custom Dual-Theme Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/index.css">
+  
+  <script>
+    // Initialize theme based on localStorage, defaulting to modern
+    (function() {
+      const savedTheme = localStorage.getItem('scr-site-theme') || 'modern';
+      document.documentElement.className = 'theme-' + savedTheme;
+    })();
+  </script>
+</head>
+<body class="theme-modern">
+  
+  <div class="main-container">
+    
+    <!-- Modern Mobile Header (Hidden in Legacy theme) -->
+    <div class="mobile-header">
+      <a href="/" class="mobile-logo-container">
+        <img src="/sites/default/files/BlueLighthouse.png" alt="Logo" class="mobile-logo">
+        <span class="mobile-title">SC Randonneurs</span>
+      </a>
+      <button class="menu-toggle-btn" aria-label="Toggle Navigation" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Legacy Header (Only styled and visible in Legacy theme) -->
+    <header>
+      <a href="/" class="brand-container">
+        <img src="/sites/default/files/BlueLighthouse.png" alt="Logo" class="brand-logo">
+        <span class="brand-title">Santa Cruz Randonneurs</span>
+      </a>
+    </header>
+
+    <!-- Content Layout Wrapper (Flex Row for Legacy, CSS Grid for Modern) -->
+    <div class="content-row">
+      
+      <!-- Unified Sidebar (Works in both themes) -->
+      <aside class="sidebar">
+        <!-- Brand Logo / Title for Modern Sidebar -->
+        <a href="/" class="brand-container">
+          <img src="/sites/default/files/BlueLighthouse.png" alt="Logo" class="brand-logo">
+          <span class="brand-title">Santa Cruz Randonneurs</span>
+        </a>
+
+        <!-- Main Navigation Links -->
+        <nav>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="/" class="{% if permalink == '/' %}active{% endif %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/general-info/" class="{% if '/pages/general-info/' in page.url %}active{% endif %}">General Info</a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/ride-format/" class="{% if '/pages/ride-format/' in page.url %}active{% endif %}">Ride Format</a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/rules/" class="{% if '/pages/rules/' in page.url %}active{% endif %}">Rules</a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/routes/" class="{% if '/pages/routes/' in page.url %}active{% endif %}">Routes</a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/registration/" class="{% if '/pages/registration/' in page.url %}active{% endif %}">Registration</a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/results/" class="{% if '/pages/results/' in page.url %}active{% endif %}">Results</a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/about/" class="{% if '/pages/about/' in page.url %}active{% endif %}">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/3cr/" class="{% if '/pages/3cr/' in page.url %}active{% endif %}">3CR</a>
+            </li>
+            <li class="nav-item">
+              <a href="/contact/" class="{% if '/contact/' in page.url %}active{% endif %}">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Search Form in Sidebar -->
+        <div class="search-box">
+          <form action="/pages/results/" method="GET" style="display: flex; width: 100%; gap: 5px;">
+            <input type="search" name="keys" placeholder="Search results..." class="search-input" aria-label="Search">
+            <button type="submit" class="search-btn" aria-label="Submit Search">Search</button>
+          </form>
+        </div>
+      </aside>
+
+      <!-- Main Content and Footer wrapper -->
+      <div class="content-wrapper">
+        <main id="main-content">
+          
+          <!-- Modern Home Hero Banner (Only shown on front page in Modern theme) -->
+          {% if permalink == '/' %}
+          <div class="hero-banner">
+            <h2 class="hero-title">Santa Cruz Randonneurs</h2>
+            <p class="hero-subtitle">Northern California randonneuring bicycle events. Open to all Randonneurs USA members.</p>
+          </div>
+          {% endif %}
+
+          <!-- Page Header / Title -->
+          <div class="page-header-block">
+            <h1 class="page-title">{{ title }}</h1>
+          </div>
+
+          <!-- Page Body wrapped in card styling -->
+          <article class="card">
+            {{ content | safe }}
+          </article>
+
+        </main>
+
+        <!-- Dynamic Unified Footer -->
+        <footer>
+          <div class="footer-links">
+            <a href="/contact/">Contact Us</a>
+          </div>
+          <span class="copyright">Copyright © 2026 Santa Cruz Randonneurs</span>
+        </footer>
+
+      </div> <!-- .content-wrapper -->
+
+    </div> <!-- .content-row -->
+
+  </div> <!-- .main-container -->
+
+  <!-- Floating Theme Switch Switcher Controls (For Client Review Comparison) -->
+  <div class="theme-switch-wrapper">
+    <span class="theme-switch-label">Version: <strong id="theme-display-label">Modern Redesign</strong></span>
+    <button class="theme-switch-btn" id="theme-switch-trigger" onclick="switchTheme()">Switch to Classic</button>
+  </div>
+
+  <!-- Page Scripts -->
+  <script>
+    // Load and enforce theme state on page load
+    const body = document.body;
+    const themeLabel = document.getElementById('theme-display-label');
+    const themeTrigger = document.getElementById('theme-switch-trigger');
+    
+    function applyTheme(theme) {
+      if (theme === 'legacy') {
+        body.className = 'theme-legacy';
+        if (themeLabel) themeLabel.innerText = 'Classic Drupal';
+        if (themeTrigger) themeTrigger.innerText = 'Switch to Modern';
+      } else {
+        body.className = 'theme-modern';
+        if (themeLabel) themeLabel.innerText = 'Modern Redesign';
+        if (themeTrigger) themeTrigger.innerText = 'Switch to Classic';
+      }
+      localStorage.setItem('scr-site-theme', theme);
+    }
+    
+    // Read theme from localStorage or default
+    const currentTheme = localStorage.getItem('scr-site-theme') || 'modern';
+    applyTheme(currentTheme);
+    
+    function switchTheme() {
+      const activeTheme = body.classList.contains('theme-modern') ? 'legacy' : 'modern';
+      applyTheme(activeTheme);
+    }
+    
+    // Mobile Navigation Menu Toggle (Modern Theme)
+    function toggleMenu() {
+      body.classList.toggle('menu-open');
+    }
+    
+    // Auto-close menu when clicking outside sidebar on mobile
+    document.addEventListener('click', function(event) {
+      const sidebar = document.querySelector('.sidebar');
+      const toggleBtn = document.querySelector('.menu-toggle-btn');
+      if (body.classList.contains('menu-open') && sidebar && !sidebar.contains(event.target) && toggleBtn && !toggleBtn.contains(event.target)) {
+        body.classList.remove('menu-open');
+      }
+    });
+  </script>
+</body>
+</html>
