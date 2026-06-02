@@ -17,11 +17,11 @@ graph TD
     C -->|3. Push to GitHub| D["🐱 GitHub Repository<br>(wstidolph/SCR)"]
     D -->|4. Automated Hook| E["☁️ Cloudflare Pages<br>(Live Web Host)"]
     
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#bfb,stroke:#333,stroke-width:2px
-    style D fill:#fdd,stroke:#333,stroke-width:2px
-    style E fill:#dfd,stroke:#333,stroke-width:2px
+    style A fill:#f9f,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#bbf,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#bfb,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#fdd,stroke:#333,stroke-width:2px,color:#000
+    style E fill:#dfd,stroke:#333,stroke-width:2px,color:#000
 ```
 
 ---
