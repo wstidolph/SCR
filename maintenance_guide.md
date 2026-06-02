@@ -91,7 +91,10 @@ When editing text below the frontmatter block, you can use these simple syntax p
 > [!TIP]
 > **Need to install these tools?** If you don't have Git or Node.js/NPM installed on your computer yet, follow the beginner-friendly [Git & Node.js/NPM Setup Guide](git_npm_setup.md) to set them up on your PC or Mac in under 5 minutes!
 
-To manage your site, open your command terminal (Git Bash, PowerShell, or macOS Terminal) and navigate to the project directory:
+> [!IMPORTANT]
+> These commands are for running from a terminal command line in your project directory
+> 
+To manage your site, open your command terminal (Git Bash, PowerShell, or macOS Terminal) and navigate to the project directory (here this is on Wayne's machine, yours will be different):
 ```powershell
 cd c:\Users\wayne\Dev\SCR_migrate
 ```
