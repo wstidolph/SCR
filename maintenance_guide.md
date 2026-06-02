@@ -2,6 +2,9 @@
 
 Welcome to the Santa Cruz Randonneurs website! This guide is designed for **beginners** with no prior experience in coding, Git, or static site generators. It explains how the website works, how it builds, and provides clear, step-by-step instructions on how to make changes.
 
+> [!NOTE]
+> **Administrators**: If you need to transfer ownership of the website's GitHub code repository, Cloudflare Pages hosting account, or custom domain away from Wayne's personal accounts to new club-managed accounts, please follow the [Website Ownership & Account Transfer Guide](transfer_ownership.md).
+
 ---
 
 ## 🗺️ How the Site Works (Architecture)
@@ -52,6 +55,8 @@ SCR_migrate/
 ├── _site/               <-- 📁 THE COMPILED OUTPUT (Never edit files directly in here!).
 ├── eleventy.config.js   <-- Building compiler instructions.
 ├── package.json         <-- Node project settings.
+├── git_npm_setup.md     <-- Beginner Git & Node installation setup guide.
+├── transfer_ownership.md <-- Instructions to migrate site hosting & accounts.
 └── maintenance_guide.md <-- You are here!
 ```
 
