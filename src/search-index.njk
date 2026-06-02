@@ -1,0 +1,17 @@
+---
+permalink: /search-index.json
+eleventyExcludeFromCollections: true
+---
+[
+  {%- set comma = joiner() -%}
+  {%- for page in collections.all -%}
+    {%- if page.url and page.data.title -%}
+      {{ comma() }}
+      {
+        "title": {{ page.data.title | dump | safe }},
+        "url": {{ page.url | dump | safe }},
+        "content": {{ page.content | squish | dump | safe }}
+      }
+    {%- endif -%}
+  {%- endfor -%}
+]

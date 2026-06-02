@@ -1045,3 +1045,263 @@ body.theme-legacy .hero-banner {
 .hidden {
   display: none !important;
 }
+
+/* ==========================================================================
+   SEARCH RESULTS CUSTOM DESIGN SYSTEM (Dual Theme Compatibility)
+   ========================================================================== */
+
+/* --- Modern Theme Search Results Styles --- */
+body.theme-modern .search-results-heading {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #0c5b96;
+  margin-bottom: 20px;
+}
+
+body.theme-modern .search-status {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(12, 91, 150, 0.08);
+  color: #4a5d6e;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+}
+
+body.theme-modern .search-error {
+  color: #e53e3e;
+}
+
+body.theme-modern .search-meta {
+  font-size: 0.9rem;
+  color: #7b8e9d;
+  margin-bottom: 20px;
+}
+
+body.theme-modern .btn-clear-search {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 4px 12px;
+  background: #e2eff7;
+  color: #0c5b96 !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 15px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+body.theme-modern .btn-clear-search:hover {
+  background: #0c5b96;
+  color: white !important;
+}
+
+body.theme-modern .search-results-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+body.theme-modern .search-result-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(12, 91, 150, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.theme-modern .search-result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(12, 91, 150, 0.08);
+  border-color: rgba(12, 91, 150, 0.15);
+}
+
+body.theme-modern .search-result-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+body.theme-modern .search-result-title a {
+  color: #0c5b96 !important;
+  text-decoration: none !important;
+}
+
+body.theme-modern .search-result-title a:hover {
+  color: #2d82b7 !important;
+  text-decoration: underline !important;
+}
+
+body.theme-modern .search-result-url {
+  font-size: 0.8rem;
+  color: #2d82b7;
+  word-break: break-all;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+body.theme-modern .search-result-snippet {
+  font-size: 0.95rem;
+  color: #4a5d6e;
+  line-height: 1.6;
+}
+
+body.theme-modern .search-highlight {
+  background-color: rgba(255, 222, 125, 0.6);
+  color: #1a2530;
+  font-weight: 600;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+body.theme-modern .no-results-message {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  border: 1px solid rgba(12, 91, 150, 0.06);
+}
+
+body.theme-modern .no-results-message p {
+  margin-bottom: 15px;
+  color: #4a5d6e;
+}
+
+body.theme-modern .no-results-message strong {
+  color: #0c5b96;
+}
+
+body.theme-modern .no-results-message .search-tip {
+  font-size: 0.9rem;
+  color: #7b8e9d;
+  margin-bottom: 25px;
+}
+
+body.theme-modern .no-results-message .btn-clear-search {
+  display: inline-block;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #0c5b96, #2d82b7);
+  color: white !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(12, 91, 150, 0.15);
+}
+
+body.theme-modern .no-results-message .btn-clear-search:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(12, 91, 150, 0.25);
+  background: #0c5b96;
+}
+
+/* --- Legacy Theme Search Results Styles (Bootstrap 4 Replication) --- */
+body.theme-legacy .search-results-heading {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #212529;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+}
+
+body.theme-legacy .search-status {
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+body.theme-legacy .search-error {
+  color: #dc3545;
+}
+
+body.theme-legacy .search-meta {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+body.theme-legacy .btn-clear-search {
+  color: #007bff !important;
+  text-decoration: underline !important;
+  margin-left: 10px;
+  font-size: 0.85rem;
+}
+
+body.theme-legacy .btn-clear-search:hover {
+  color: #0056b3 !important;
+}
+
+body.theme-legacy .search-results-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+body.theme-legacy .search-result-card {
+  padding: 15px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+body.theme-legacy .search-result-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: Arial, sans-serif;
+}
+
+body.theme-legacy .search-result-title a {
+  color: #007bff !important;
+  text-decoration: underline !important;
+}
+
+body.theme-legacy .search-result-title a:hover {
+  color: #0056b3 !important;
+}
+
+body.theme-legacy .search-result-url {
+  font-size: 0.8rem;
+  color: #28a745;
+  margin-bottom: 8px;
+}
+
+body.theme-legacy .search-result-snippet {
+  font-size: 0.9rem;
+  color: #212529;
+  line-height: 1.5;
+}
+
+body.theme-legacy .search-highlight {
+  background-color: #ffc107;
+  color: #212529;
+  font-weight: bold;
+  padding: 0 2px;
+}
+
+body.theme-legacy .no-results-message {
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+body.theme-legacy .no-results-message p {
+  margin-bottom: 10px;
+}
+
+body.theme-legacy .no-results-message .btn-clear-search {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 4px;
+}
+
+body.theme-legacy .no-results-message .btn-clear-search:hover {
+  background-color: #0069d9;
+}
