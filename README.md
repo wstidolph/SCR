@@ -1,17 +1,45 @@
-# Purpose
-This is a re-hosting project for the Santa Cruz Randonneurs site, just to make it easier to move ownership/maintenance of the site in the future, and to explore variant styling. 
+# Santa Cruz Randonneurs Rehosting Project
 
-# Status
-Currently the generated site is hosted at [https://scr-5d6.pages.dev/](https://scr-5d6.pages.dev/) (a free Cloudglage Pages setup under Wayne Stidolph's account)
-* see the [Architecture & Maintenance Guide](maintenance_guide.md) file for general architecture and instructions
-* file a github [Issue](https://github.com/wstidolph/SCR/issues) to comment or complain
+This is a re-hosting and migration project for the Santa Cruz Randonneurs website. The goal of this project is to move ownership and maintenance of the site from legacy Drupal hosting to a fast, modern static site setup, and to explore responsive dual-theme styling layouts.
 
-# Updating
-whenever you or your client make updates:
+---
 
-1. Place any new files (such as the missing Jenny Oh Hatfield images as described in the  
-todo.md) or update text in the `src/` folder
-1. Commit the changes and run `git push origin main`
-1. Cloudflare will automatically detect the push, rebuild the static assets using Eleventy, and update your live site at scr-5d6.pages.dev within seconds.
-# Tech Support
-This initial rehosting is done by Wayne Stidolph using Google's AI 'Gemini'
+## 🚀 Getting Started
+
+To get started with running, editing, or administering the site, please refer to the following resources:
+
+* **[Live Deployment Target](https://scr-5d6.pages.dev/)**: The current live production site, compiled using Eleventy and hosted on Cloudflare Pages.
+* **[Site Maintenance Handoff Guide](maintenance_guide.md)**: The primary guide detailing how the static site architecture works, how the page layout is structured, and instructions for common edits (updating events schedule, editing page text, and activating contact forms).
+* **[Git & Node.js/NPM Setup Guide](git_npm_setup.md)**: A step-by-step setup guide for beginners to install Git, Node.js, and NPM on a Windows 11 PC or macOS, configure Git credentials, clone the repository locally, and run `npm install`.
+* **[Website Ownership & Account Transfer Guide](transfer_ownership.md)**: A migration guide for transferring the GitHub repository, Cloudflare Pages hosting account, and custom domain billing from Wayne's personal accounts to club-managed administrator accounts (Lois Springsteen / admin).
+
+---
+
+## 📊 Status & Project TODOs
+
+### Completeness Summary
+The core migration from Drupal to Eleventy is complete:
+* All static pages, rule sheets, annual reports, and results (from 2004 to 2025) have been successfully ported.
+* A floating comparison control is available to swap the site template in real-time between the **Modern Redesign** and **Classic Drupal** styles.
+* An ultra-fast, client-side search engine is fully integrated into the Results page, allowing users to search across the entire site's historical text in milliseconds.
+
+### Remaining TODO Checklist
+To finalize the site transition, the club administrators need to complete the following:
+1. **Restore Missing Images**: Obtain and place the two missing Jenny Oh Hatfield photos into `src/sites/default/files/2021-04/` (details in [Maintenance Guide](maintenance_guide.md#2-restoring-missing-event-images)).
+2. **Activate Contact Form**: Get a free Web3Forms API key and insert it in `src/contact/index.html` to enable form submissions (details in [Maintenance Guide](maintenance_guide.md#3-activating-the-contact-form-email-address)).
+3. **Verify PayPal Checkout**: Test and confirm that the PayPal event payment button credentials under `src/pages/paypal.html` are correct for registrations.
+4. **Execute Ownership Transfer**: Follow the [Transfer Guide](transfer_ownership.md) to move the GitHub code repository and Cloudflare site hosting into club-controlled administrator accounts.
+
+### Bug Reports & Enhancements
+Please visit the **[GitHub Issues Page](https://github.com/wstidolph/SCR/issues)** to track active tasks, file new bug reports, or review project requests.
+
+---
+
+## ✍️ Updating instructions
+
+To make updates, add new content, or edit page text, please refer to the detailed step-by-step instructions in the main **[Site Maintenance Handoff Guide (Task 2: Publish Your Changes)](maintenance_guide.md#task-2-publish-your-changes-to-the-web-git-deploy)**. It details how to stage changes, write commit messages, and push updates live.
+
+---
+
+## 🛠️ Tech Support
+This initial rehosting and modern code migration was completed by Wayne Stidolph utilizing Google's AI assistant 'Gemini'.
