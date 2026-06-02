@@ -88,7 +88,10 @@ When editing text below the frontmatter block, you can use these simple syntax p
 
 ## 💻 Step-by-Step Maintenance Tasks
 
-To manage your site, open your command terminal (PowerShell or Command Prompt) and navigate to the project directory:
+> [!TIP]
+> **Need to install these tools?** If you don't have Git or Node.js/NPM installed on your computer yet, follow the beginner-friendly [Git & Node.js/NPM Setup Guide](git_npm_setup.md) to set them up on your PC or Mac in under 5 minutes!
+
+To manage your site, open your command terminal (Git Bash, PowerShell, or macOS Terminal) and navigate to the project directory:
 ```powershell
 cd c:\Users\wayne\Dev\SCR_migrate
 ```
