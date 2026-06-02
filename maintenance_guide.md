@@ -154,3 +154,18 @@ We filed an issue to restore the missing Jenny Oh Hatfield photos on the **Ride 
    <input type="hidden" name="access_key" value="a1b2c3d4-e5f6-7a8b-9c0d-e1f2a3b4c5d6">
    ```
 4. Save and deploy. Form submissions will now deliver straight to your inbox!
+
+### 4. Adding a New Year's Results PDF
+When a new year's results are completed and you have a new results PDF to upload (for example, `SCRResults2026.pdf`):
+1. **Drop the PDF into the project assets folder**: 
+   - Place the PDF inside the assets folder structure at: `src/sites/default/files/` 
+   - You can organize them by creating a new year/month directory if desired (e.g. `src/sites/default/files/2026-10/`).
+2. **Link the PDF on the Results page**: 
+   - Open `src/pages/results.html` in a text editor.
+   - Locate the list of results starting under the `<div id="default-results-section">` tag.
+   - Add a new list item (`<li>`) at the top of the list, pointing to your relative PDF path:
+     ```html
+     <li><a href="/sites/default/files/2026-10/SCRResults2026.pdf">2026 Results</a></li>
+     ```
+3. **Save and Deploy**: Follow **Task 2** to commit your changes and push them to GitHub. Cloudflare will compile and deploy the site in seconds, and your new PDF will automatically be loaded and searchable on the live site!
+
