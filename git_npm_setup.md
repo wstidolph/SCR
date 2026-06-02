@@ -82,7 +82,36 @@ Before Git lets you commit changes, you must introduce yourself so it can stamp 
    git config --global user.name "Your Name"
    git config --global user.email "your.email@example.com"
    ```
-2. You are now ready to run **Task 1 (npm start)** and **Task 2 (git commit & deploy)** in the main [Maintenance Guide](maintenance_guide.md)!
+2. You are now ready to proceed to **Step 5** to download the project files!
+
+---
+
+## 📥 Step 5: Download the Project & Install Dependencies (Initial Checkout)
+Now that your tools are installed and configured, you need to download a copy of the project files onto your computer:
+
+1. **Choose your workspace folder**: 
+   - Decide where you want to keep your project files. Open your terminal (Git Bash on Windows, Terminal on macOS).
+   - For example, to navigate to your home directory's Documents folder, type this and press Enter:
+     ```bash
+     cd ~/Documents
+     ```
+2. **Download the project repository (Clone)**:
+   - Run the following command to download the Santa Cruz Randonneurs project directory:
+     ```bash
+     git clone https://github.com/wstidolph/SCR.git
+     ```
+3. **Enter the project folder**:
+   - Change your terminal directory into the newly created project folder:
+     ```bash
+     cd SCR
+     ```
+4. **Install compilation dependencies**:
+   - Run the following command to download the packages needed by the Eleventy preview compiler (like Node modules):
+     ```bash
+     npm install
+     ```
+
+Once `npm install` finishes downloading the files, you are ready to open `src/` to start editing and follow the instructions in the [Maintenance Guide](maintenance_guide.md)!
 
 ---
 
