@@ -239,7 +239,7 @@ body.theme-modern .search-box {
 body.theme-modern .search-input {
   width: 100%;
   padding: 10px 16px;
-  padding-right: 40px;
+  padding-right: 65px; /* Increased to prevent text from going under the Search button */
   border: 1px solid #d8e2eb;
   border-radius: 8px;
   background-color: #f7fafc;
@@ -247,6 +247,13 @@ body.theme-modern .search-input {
   font-size: 0.85rem;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hide native search cancel/decoration buttons to prevent overlapping the absolute positioned Search button */
+body.theme-modern .search-input::-webkit-search-cancel-button,
+body.theme-modern .search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 body.theme-modern .search-input:focus {
