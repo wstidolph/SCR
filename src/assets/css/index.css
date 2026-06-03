@@ -29,6 +29,10 @@ body {
   transition: background-color 0.4s ease, color 0.3s ease;
 }
 
+.text-center {
+  text-align: center !important;
+}
+
 /* ==========================================================================
    THEME MODERN (Premium redesigned look and feel)
    ========================================================================== */
