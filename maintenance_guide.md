@@ -149,15 +149,7 @@ Once you are happy with your local previews, push them live to the internet:
    ```
 4. Save the file and follow **Task 2** to deploy!
 
-### 2. Restoring Missing Event Images
-We filed an issue to restore the missing Jenny Oh Hatfield photos on the **Ride Format** page:
-1. Retrieve the original image files:
-   - `Meeting.png`
-   - `StoreControl.png`
-2. Drop them directly into the folder: `src/sites/default/files/2021-04/`
-3. Save, and run **Task 2** to deploy. The images will automatically load!
-
-### 3. Activating the Contact Form Email Address
+### 2. Activating the Contact Form Email Address
 1. Go to [web3forms.com](https://web3forms.com/) and enter your club email to retrieve a free access key.
 2. Open `src/contact/index.html` in a text editor.
 3. Locate line 10 and replace `YOUR_ACCESS_KEY_HERE` with your key:
@@ -166,7 +158,7 @@ We filed an issue to restore the missing Jenny Oh Hatfield photos on the **Ride 
    ```
 4. Save and deploy. Form submissions will now deliver straight to your inbox!
 
-### 4. Adding a New Year's Results PDF
+### 3. Adding a New Year's Results PDF
 When a new year's results are completed and you have a new results PDF to upload (for example, `SCRResults2026.pdf`):
 1. **Drop the PDF into the project assets folder**: 
    - Place the PDF inside the assets folder structure at: `src/sites/default/files/` 
@@ -179,4 +171,5 @@ When a new year's results are completed and you have a new results PDF to upload
      <li><a href="/sites/default/files/2026-10/SCRResults2026.pdf">2026 Results</a></li>
      ```
 3. **Save and Deploy**: Follow **Task 2** to commit your changes and push them to GitHub. Cloudflare will compile and deploy the site in seconds, and your new PDF will automatically be loaded and searchable on the live site!
+
 
