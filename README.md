@@ -25,9 +25,8 @@ The core migration from Drupal to Eleventy is complete:
 
 ### Remaining TODO Checklist
 To finalize the site transition, the club administrators need to complete the following:
-1. **Activate Contact Form**: Get a free Web3Forms API key and insert it in `src/contact/index.html` to enable form submissions (details in [Maintenance Guide](maintenance_guide.md#3-activating-the-contact-form-email-address)).
-2. **Verify PayPal Checkout**: Test and confirm that the PayPal event payment button credentials under `src/pages/paypal.html` are correct for registrations.
-3. **Execute Ownership Transfer**: Follow the [Transfer Guide](transfer_ownership.md) to move the GitHub code repository and Cloudflare site hosting into club-controlled administrator accounts.
+1. **Verify PayPal Checkout**: Test and confirm that the PayPal event payment button credentials under `src/pages/paypal.html` are correct for registrations.
+2. **Execute Ownership Transfer**: Follow the [Transfer Guide](transfer_ownership.md) to move the GitHub code repository and Cloudflare site hosting into club-controlled administrator accounts.
 
 ### Bug Reports & Enhancements
 Please visit the **[GitHub Issues Page](https://github.com/wstidolph/SCR/issues)** to track active tasks, file new bug reports, or review project requests.
