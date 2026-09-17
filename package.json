@@ -6,10 +6,13 @@
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve",
-    "debug": "DEBUG=Eleventy* eleventy"
+    "debug": "DEBUG=Eleventy* eleventy",
+    "format": "prettier --write \"src/pages/**/*.html\"",
+    "format:check": "prettier --check \"src/pages/**/*.html\""
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "prettier": "^3.9.7"
   },
   "dependencies": {
     "jsdom": "^26.0.0"

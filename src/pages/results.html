@@ -6,31 +6,97 @@ permalink: "/pages/results/"
 
 <div class="results-container">
   <!-- Dynamic Search Results Section (Shown only when searching) -->
-  <div id="search-results-section" style="display: none; margin-bottom: 30px;">
-    <h2 class="search-results-heading" id="search-results-title">Search Results</h2>
-    <div id="search-results-loading" class="search-status">Loading search results...</div>
+  <div id="search-results-section" style="display: none; margin-bottom: 30px">
+    <h2 class="search-results-heading" id="search-results-title">
+      Search Results
+    </h2>
+    <div id="search-results-loading" class="search-status">
+      Loading search results...
+    </div>
     <div id="search-results-list" class="search-results-list"></div>
   </div>
 
   <!-- Standard Annual Results Navigation List (Hidden when searching) -->
   <div id="default-results-section">
-    <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+    <div
+      class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"
+    >
       <ul>
-        <li><a href="/sites/default/files/2025-03/SCRResults2025.pdf">2025 Results</a></li>
-        <li><a href="/sites/default/files/2024-07/SCRResults2024_0.pdf">2024 Results</a></li>
-        <li><a href="/sites/default/files/2023-05/2023Results.pdf">2023 Results</a></li>
-        <li><a href="/sites/default/files/2023-01/2022Results.pdf">2022 Results</a></li>
-        <li><a href="/sites/default/files/2021-09/2021Results.pdf">2021 Results</a></li>
-        <li><a href="/sites/default/files/2020-10/2020Results.pdf">2020 Results</a></li>
-        <li><a href="/sites/default/files/2020-10/2019Results.pdf">2019 Results</a></li>
-        <li><a href="/sites/default/files/2020-10/2018Results.pdf">2018 Results</a></li>
-        <li><a href="/sites/default/files/2020-10/2017Results.pdf">2017 Results</a></li>
-        <li><a href="/sites/default/files/2020-10/2016Results.pdf">2016 Results</a></li>
-        <li><a href="/sites/default/files/2020-10/2015Results.pdf">2015 Results</a></li>
-        <li><a href="/sites/default/files/2020-10/2014Results.pdf">2014 Results</a></li>
-        <li><a href="/sites/default/files/2020-10/2013Results.pdf">2013 Results</a></li>
-        <li><a href="/sites/default/files/2020-10/2012Results.pdf">2012 Results</a></li>
-        <li><a href="/sites/default/files/2020-10/2011Results.pdf">2011 Results</a></li>
+        <li>
+          <a href="/sites/default/files/2025-03/SCRResults2025.pdf"
+            >2025 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2024-07/SCRResults2024_0.pdf"
+            >2024 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2023-05/2023Results.pdf"
+            >2023 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2023-01/2022Results.pdf"
+            >2022 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2021-09/2021Results.pdf"
+            >2021 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2020-10/2020Results.pdf"
+            >2020 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2020-10/2019Results.pdf"
+            >2019 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2020-10/2018Results.pdf"
+            >2018 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2020-10/2017Results.pdf"
+            >2017 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2020-10/2016Results.pdf"
+            >2016 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2020-10/2015Results.pdf"
+            >2015 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2020-10/2014Results.pdf"
+            >2014 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2020-10/2013Results.pdf"
+            >2013 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2020-10/2012Results.pdf"
+            >2012 Results</a
+          >
+        </li>
+        <li>
+          <a href="/sites/default/files/2020-10/2011Results.pdf"
+            >2011 Results</a
+          >
+        </li>
         <li><a href="/pages/2010Results/">2010 Results</a></li>
         <li><a href="/pages/2009Results/">2009 Results</a></li>
         <li><a href="/pages/2008Results/">2008 Results</a></li>
@@ -44,82 +110,91 @@ permalink: "/pages/results/"
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
-    const query = params.get('keys');
-    
-    if (query && query.trim() !== '') {
-      const searchSection = document.getElementById('search-results-section');
-      const defaultSection = document.getElementById('default-results-section');
-      const searchTitle = document.getElementById('search-results-title');
-      const loadingDiv = document.getElementById('search-results-loading');
-      const resultsList = document.getElementById('search-results-list');
-      
+    const query = params.get("keys");
+
+    if (query && query.trim() !== "") {
+      const searchSection = document.getElementById("search-results-section");
+      const defaultSection = document.getElementById("default-results-section");
+      const searchTitle = document.getElementById("search-results-title");
+      const loadingDiv = document.getElementById("search-results-loading");
+      const resultsList = document.getElementById("search-results-list");
+
       // Keep search boxes synced across navigation
-      const sidebarSearchInputs = document.querySelectorAll('.search-input');
-      sidebarSearchInputs.forEach(input => {
+      const sidebarSearchInputs = document.querySelectorAll(".search-input");
+      sidebarSearchInputs.forEach((input) => {
         input.value = query;
       });
-      
-      searchSection.style.display = 'block';
-      defaultSection.style.display = 'none';
+
+      searchSection.style.display = "block";
+      defaultSection.style.display = "none";
       searchTitle.innerHTML = `Search Results for "${escapeHtml(query)}"`;
-      
-      fetch('/search-index.json')
-        .then(response => {
-          if (!response.ok) throw new Error('Failed to load search index');
+
+      fetch("/search-index.json")
+        .then((response) => {
+          if (!response.ok) throw new Error("Failed to load search index");
           return response.json();
         })
-        .then(data => {
-          loadingDiv.style.display = 'none';
+        .then((data) => {
+          loadingDiv.style.display = "none";
           const matches = performSearch(data, query);
           renderResults(matches, query, resultsList);
         })
-        .catch(err => {
+        .catch((err) => {
           console.error(err);
-          loadingDiv.innerHTML = '<span class="search-error">Failed to load search results. Please try again.</span>';
+          loadingDiv.innerHTML =
+            '<span class="search-error">Failed to load search results. Please try again.</span>';
         });
     }
   });
 
   function escapeHtml(str) {
-    if (!str) return '';
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    if (!str) return "";
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
   }
 
   function performSearch(index, query) {
-    const keywords = query.toLowerCase().split(/\s+/).filter(k => k.length > 0);
+    const keywords = query
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((k) => k.length > 0);
     if (keywords.length === 0) return [];
 
     const results = [];
     for (const item of index) {
       const titleLower = item.title.toLowerCase();
       const contentLower = item.content.toLowerCase();
-      
+
       let matchCount = 0;
       let matchedAll = true;
-      
+
       for (const keyword of keywords) {
         if (titleLower.includes(keyword) || contentLower.includes(keyword)) {
           // Rank matches in the title much higher
           matchCount += (titleLower.split(keyword).length - 1) * 15;
-          matchCount += (contentLower.split(keyword).length - 1);
+          matchCount += contentLower.split(keyword).length - 1;
         } else {
           matchedAll = false;
           break;
         }
       }
-      
+
       if (matchedAll) {
         results.push({
           item: item,
-          score: matchCount
+          score: matchCount,
         });
       }
     }
-    
+
     // Sort descending by relevance score
-    return results.sort((a, b) => b.score - a.score).map(r => r.item);
+    return results.sort((a, b) => b.score - a.score).map((r) => r.item);
   }
 
   function renderResults(matches, query, container) {
@@ -133,10 +208,10 @@ permalink: "/pages/results/"
       `;
       return;
     }
-    
+
     let html = `<p class="search-meta">${matches.length} page(s) found. <a href="/pages/results/" class="btn-clear-search">Clear Search</a></p>`;
     html += '<div class="search-results-cards">';
-    
+
     for (const item of matches) {
       const snippet = createSnippet(item.content, query);
       html += `
@@ -147,16 +222,20 @@ permalink: "/pages/results/"
         </div>
       `;
     }
-    html += '</div>';
+    html += "</div>";
     container.innerHTML = html;
   }
 
   function createSnippet(content, query) {
-    const keywords = query.toLowerCase().split(/\s+/).filter(k => k.length > 0);
-    if (keywords.length === 0) return escapeHtml(content.substring(0, 180)) + '...';
-    
+    const keywords = query
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((k) => k.length > 0);
+    if (keywords.length === 0)
+      return escapeHtml(content.substring(0, 180)) + "...";
+
     const contentLower = content.toLowerCase();
-    
+
     // Locate the first occurrence of any keyword to focus our snippet around
     let firstIndex = -1;
     for (const keyword of keywords) {
@@ -165,42 +244,45 @@ permalink: "/pages/results/"
         firstIndex = idx;
       }
     }
-    
+
     if (firstIndex === -1) {
-      return escapeHtml(content.substring(0, 180)) + '...';
+      return escapeHtml(content.substring(0, 180)) + "...";
     }
-    
+
     // Focus context window around the first match
     const snippetLength = 200;
     let start = Math.max(0, firstIndex - 60);
     let end = Math.min(content.length, start + snippetLength);
-    
+
     // Adjust window start so we don't start in the middle of a word
     if (start > 0) {
-      const nextSpace = content.indexOf(' ', start);
+      const nextSpace = content.indexOf(" ", start);
       if (nextSpace !== -1 && nextSpace < firstIndex) {
         start = nextSpace + 1;
       }
     }
-    
+
     let snippetText = content.substring(start, end);
-    if (start > 0) snippetText = '...' + snippetText;
-    if (end < content.length) snippetText = snippetText + '...';
-    
+    if (start > 0) snippetText = "..." + snippetText;
+    if (end < content.length) snippetText = snippetText + "...";
+
     let escapedSnippet = escapeHtml(snippetText);
-    
+
     // Highlight all matches, sorting keywords longest-to-shortest to prevent highlight nesting issues
     const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
     for (const keyword of sortedKeywords) {
       const escapedKeyword = escapeHtml(keyword);
-      const regex = new RegExp('(' + pregQuote(escapedKeyword) + ')', 'gi');
-      escapedSnippet = escapedSnippet.replace(regex, '<mark class="search-highlight">$1</mark>');
+      const regex = new RegExp("(" + pregQuote(escapedKeyword) + ")", "gi");
+      escapedSnippet = escapedSnippet.replace(
+        regex,
+        '<mark class="search-highlight">$1</mark>',
+      );
     }
-    
+
     return escapedSnippet;
   }
 
   function pregQuote(str) {
-    return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
   }
 </script>
